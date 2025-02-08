@@ -3,8 +3,8 @@ const cors = require('cors');
 require('dotenv').config();
 
 // Import Routes
-const pricelineRoutes = require('./routes/priceline');
-const chatRoutes = require('./routes/chat');
+const pricelineRoutes = require('../routes/priceline');
+const chatRoutes = require('../routes/chat');
 
 const app = express();
 
