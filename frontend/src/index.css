@@ -1,0 +1,36 @@
+@import 'tailwindcss';
+
+button,
+select {
+  cursor: pointer;
+}
+input[type='date'] {
+  color-scheme: dark;
+}
+input[type='date']::-webkit-calendar-picker-indicator {
+  color: grey;
+  background: none;
+  z-index: 1;
+  cursor: pointer;
+}
+/* Custom date input to hide the default calendar icon and align the date picker */
+.custom-date-input::-webkit-calendar-picker-indicator {
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+select {
+  /* for Firefox */
+  -moz-appearance: none;
+  /* for Safari, Chrome, Opera */
+  -webkit-appearance: none;
+}
+
+/* for IE10 */
+select::-ms-expand {
+  display: none;
+}
