@@ -52,7 +52,7 @@ export const FlightsProvider = ({ children }) => {
 
     try {
       const response = await axios.post(
-        'http://localhost:5000/api/flights',
+        `${import.meta.env.BACKEND_BASE_URL}/api/flights`,
         requestData,
         {
           headers: { 'Content-Type': 'application/json' },
