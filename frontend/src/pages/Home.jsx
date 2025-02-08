@@ -19,14 +19,14 @@ const Home = () => {
       />
       <div>
         <PageTitle className="z-100" />
-        <div className="w-full min-h-[400px] h-[450px] max-w-5xl grid grid-cols-1 sm:grid-cols-2 gap-4 bg-gray-800/70 backdrop-blur-lg shadow-xl rounded-2xl p-6 relative z-10 opacity-85">
+        <div className="w-full min-h-[400px] sm:h-[450px] max-w-5xl grid grid-cols-1 sm:grid-cols-2 gap-4 bg-gray-800/70 backdrop-blur-lg shadow-xl rounded-2xl p-6 relative z-10 opacity-85">
           {/* Search Form */}
-          <div className="flex justify-center h-full">
+          <div className="flex justify-center h-full order-2 sm:order-1 max-w-full">
             <SearchForm searchDeals={searchDeals} loading={loading} />
           </div>
 
           {/* ChatBot */}
-          <div className="flex justify-center h-full overflow-hidden">
+          <div className="flex justify-center h-full order-1 sm:order-2 sm:overflow-hidden">
             <ChatBot />
           </div>
         </div>
