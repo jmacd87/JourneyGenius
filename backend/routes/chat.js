@@ -18,15 +18,15 @@ const validateMessage = (req, res, next) => {
 router.post('/', validateMessage, async (req, res) => {
   const { message } = req.body;
 
-  if (!process.env.DEEPSEEK_API_KEY) {
-    return res.status(500).json({ error: 'Missing DeepSeek API key' });
+  if (!process.env.OPENAI_API_KEY) {
+    return res.status(500).json({ error: 'Missing OpenAI API key' });
   }
 
   try {
-    const deepSeekResponse = await axios.post(
-      'https://api.deepseek.com/v1/chat/completions',
+    const openAiResponse = await axios.post(
+      'https://api.openai.com/v1/chat/completions',
       {
-        model: 'deepseek-chat',
+        model: 'gpt-3.5-turbo', // or 'gpt-4' depending on the model you want
         messages: [
           { role: 'system', content: 'You are a helpful travel assistant.' },
           { role: 'user', content: message },
@@ -35,13 +35,13 @@ router.post('/', validateMessage, async (req, res) => {
       },
       {
         headers: {
-          Authorization: `Bearer ${process.env.DEEPSEEK_API_KEY}`,
+          Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,
           'Content-Type': 'application/json',
         },
       }
     );
 
-    res.json({ reply: deepSeekResponse.data.choices[0]?.message?.content });
+    res.json({ reply: openAiResponse.data.choices[0]?.message?.content });
   } catch (error) {
     console.error(
       'Chatbot Error:',
