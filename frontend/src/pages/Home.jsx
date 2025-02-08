@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import SearchForm from '../components/SearchForm';
 import ChatBot from '../components/ChatBot';
 import FlightResults from '../components/FlightResults'; // Import FlightResults
@@ -8,10 +8,6 @@ import { useFlights } from '../context/FlightsContext';
 
 const Home = () => {
   const { flights, loading, error, searchDeals } = useFlights();
-
-  useEffect(() => {
-    console.log('Home Page Flights', flights);
-  }, [flights]);
 
   return (
     <div className="relative min-h-screen flex flex-col items-center pt-[5vh] bg-gradient-to-r from-gray-900 to-gray-800 p-4">
