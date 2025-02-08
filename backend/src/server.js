@@ -9,11 +9,10 @@ const chatRoutes = require('../routes/chat');
 const app = express();
 // CORS configuration
 const corsOptions = {
-  origin: 'https://journey-genius.vercel.app', // Your frontend URL
+  origin: ['https://journey-genius.vercel.app', 'http://localhost:3000'], // Allow both production and local frontend
   methods: ['GET', 'POST'], // Allow necessary methods
   allowedHeaders: ['Content-Type', 'Authorization'], // Allow headers if needed
 };
-
 // Apply CORS middleware
 app.use(cors(corsOptions));
 app.use(express.json());

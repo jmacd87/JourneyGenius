@@ -27,7 +27,9 @@ const Home = () => {
 
           {/* ChatBot */}
           <div className="flex justify-center h-full order-1 sm:order-2 sm:overflow-hidden">
-            <ChatBot />
+            <div className="chat-bot-container max-h-[350px] sm:max-h-[450px] overflow-y-auto">
+              <ChatBot />
+            </div>
           </div>
         </div>
 
