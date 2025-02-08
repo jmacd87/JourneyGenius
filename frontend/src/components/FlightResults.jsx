@@ -23,7 +23,6 @@ const FlightResults = ({ flights }) => {
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   const buildGoogleFlightsUrl = (slice) => {
-    console.log('IS there a slice?', slice?.sements?.length);
     if (!slice?.segments?.length) return '#';
 
     const origin = slice.segments[0]?.departInfo?.airport?.code;
@@ -31,7 +30,6 @@ const FlightResults = ({ flights }) => {
       slice.segments[slice.segments.length - 1]?.arrivalInfo?.airport?.code;
     const departDate =
       slice.segments[0]?.departInfo?.time?.dateTime?.split('T')[0];
-    console.log('FLIGHT INFO', origin, destination, departDate);
     if (!origin || !destination || !departDate) return '#';
 
     const query = `Flights to ${destination} from ${origin} on ${departDate}`;
