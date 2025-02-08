@@ -7,9 +7,15 @@ const pricelineRoutes = require('../routes/priceline');
 const chatRoutes = require('../routes/chat');
 
 const app = express();
+// CORS configuration
+const corsOptions = {
+  origin: 'https://journey-genius.vercel.app', // Your frontend URL
+  methods: ['GET', 'POST'], // Allow necessary methods
+  allowedHeaders: ['Content-Type', 'Authorization'], // Allow headers if needed
+};
 
-// Middleware
-app.use(cors());
+// Apply CORS middleware
+app.use(cors(corsOptions));
 app.use(express.json());
 
 // Routes
