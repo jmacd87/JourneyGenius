@@ -19,7 +19,7 @@ router.post('/', async (req, res) => {
     destination,
     departureDate,
     returnDate,
-    itineraryType = 'ROUND_TRIP',
+    flightType,
     classType = 'ECO', // Changed from ECONOMY to ECO per the updated query
     sortOrder = 'PRICE',
   } = req.body;
@@ -40,10 +40,12 @@ router.post('/', async (req, res) => {
     date_departure: departureDate,
     class_type: classType,
     sort_order: sortOrder,
-    itinerary_type: itineraryType,
-    date_departure_return: returnDate,
+    itinerary_type: flightType,
   };
-
+  if (flightType === 'ROUND_TRIP') {
+    console.log('ADDING RETURN dATE to server', flightType);
+    requestParams.date_departure_return = returnDate;
+  }
   try {
     console.log(
       '🌍 Making request to Priceline API with parameters:',
@@ -65,7 +67,7 @@ router.post('/', async (req, res) => {
     console.log('✅ Priceline API Response:', response.data);
     res.json(response.data);
   } catch (error) {
-    console.log(error);
+    console.log('ERROR Message', error.message);
     console.error(
       '❌ Error fetching flights:',
       error.response?.data || error.message

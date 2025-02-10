@@ -44,12 +44,16 @@ export const FlightsProvider = ({ children }) => {
       origin,
       destination,
       departureDate: new Date(departureDate).toISOString().split('T')[0],
-      returnDate: new Date(returnDate).toISOString().split('T')[0],
-      itinerary_type: flightType,
+      flightType: flightType,
       class_type: 'ECO',
       sort_order: 'PRICE',
     };
-
+    if (flightType === 'ROUND_TRIP') {
+      console.log('ADDING RETURN dATE');
+      requestParams.returnDate = new Date(returnDate)
+        .toISOString()
+        .split('T')[0];
+    }
     try {
       const response = await axios.post(
         `${import.meta.env.VITE_BACKEND_BASE_URL}/api/flights`,

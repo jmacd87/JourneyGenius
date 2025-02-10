@@ -85,16 +85,25 @@ const FlightResults = ({ flights }) => {
                 </p>
                 <div className="text-gray-400 text-sm">
                   {slice?.segments?.map((segment, index) => (
-                    <div key={index} className="flex">
-                      <span>{segment?.departInfo?.airport?.code || 'N/A'}</span>
-                      <span className="mx-2">-</span>
-                      <span>
-                        {segment?.arrivalInfo?.airport?.code || 'N/A'}
-                      </span>
-                      <span className="mx-2">
+                    <div
+                      key={index}
+                      className="flex flex-col sm:flex-row items-start"
+                    >
+                      {/* First row: Airport codes */}
+                      <div className="flex text-left">
+                        <span>
+                          {segment?.departInfo?.airport?.code || 'N/A'}
+                        </span>
+                        <span className="mx-2">-</span>
+                        <span>
+                          {segment?.arrivalInfo?.airport?.code || 'N/A'}
+                        </span>
+                      </div>
+                      {/* Second row (on mobile) or inline (on desktop): Dates */}
+                      <div className="sm:mt-0 sm:ml-4 text-left">
                         {formatDateToTime(segment?.departInfo?.time.dateTime)} -{' '}
                         {formatDateToTime(segment?.arrivalInfo?.time.dateTime)}
-                      </span>
+                      </div>
                     </div>
                   ))}
                 </div>
