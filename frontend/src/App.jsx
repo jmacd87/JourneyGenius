@@ -10,9 +10,9 @@ const App = () => {
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Analytics />
         </Routes>
       </Router>
+      <Analytics />
     </FlightsProvider>
   );
 };
