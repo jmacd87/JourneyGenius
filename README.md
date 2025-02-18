@@ -1,8 +1,8 @@
 <a id="readme-top"></a>
-<div align="center">
-  <h3 align="center">Journey Genius</h3>
+<div align="left">
+  <h3 align="left">Journey Genius</h3>
 
-  <p align="center">
+  <p align="left">
     Fullstack application that allows users to search for flights and interact with a chatbot to plan vacations.
     <br />
     <a href="https://journey-genius.vercel.app/">View Demo</a>
@@ -27,8 +27,6 @@ To get a local copy up and running follow these simple example steps.
 
 ### Installation
 
-_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
-
 1. Get a free API Key at [https://rapidapi.com/tipsters/api/priceline-com-provider] and [https://platform.openai.com/docs/overview]
 2. Clone the repo
    ```sh
@@ -42,9 +40,8 @@ _Below is an example of how you can instruct your audience on installing and set
    cd ./backend
    npm install
    ```
-4. Enter your API in `config.js`
+4. Enter your API in backend `.env`
    ```js
-   in the backend create a .env file and add
    const OPENAI_API_KEY = 'ENTER YOUR API'
    const RAPIDAPI_KEY = 'ENTER YOUR API'
    ```
