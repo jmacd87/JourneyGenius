@@ -27,7 +27,7 @@ To get a local copy up and running follow these simple example steps.
 
 ### Installation
 
-1. Get a free API Key at [https://rapidapi.com/tipsters/api/priceline-com-provider] and [https://platform.openai.com/docs/overview]
+1. Get a free API Key at https://rapidapi.com/tipsters/api/priceline-com-provider
 2. Clone the repo
    ```sh
    git clone [https://github.com/github_username/repo_name.git](https://github.com/jmacd87/JourneyGenius)
