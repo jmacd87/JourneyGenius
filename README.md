@@ -5,6 +5,7 @@
   <p align="left">
     Fullstack application that allows users to search for flights and interact with a chatbot to plan vacations.
     <br />
+    <br />
     <a href="https://journey-genius.vercel.app/">View Demo</a>
   </p>
 </div>
@@ -50,7 +51,10 @@ To get a local copy up and running follow these simple example steps.
    git remote set-url origin github_username/repo_name
    git remote -v # confirm the changes
    ```
-
+6. Run code locally
+  ```sh
+  run npm start from the project base and it will start both frontend and backend
+  ```
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
